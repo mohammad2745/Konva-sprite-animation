@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <h2>Drawing Sprites Using Konva</h2>
+    <h2>Drawing Sprites Using Konva - Without Background</h2>
     <div id="container"></div>
     <script>
         var canvasWidth = window.innerWidth;
@@ -24,7 +24,6 @@
 
         // Define Sprite Image
         var layer = new Konva.Layer();
-        var layer_image = new Konva.Layer();
         var theSprite = new Image({
             x: 50,
             y: 50,
@@ -91,8 +90,10 @@
                             x: currentX,
                             y: frame.y,
                             image: imageObj,
-                            width: 106,
-                            height: 118,
+                            scaleX: .5,
+                            scaleY: .5,
+                            width: imageObj.width * scaleX,
+                            height: imageObj.height * scaleY,
                         });
 
                         // add the shape to the layer
